@@ -15,6 +15,21 @@ class BinarySearchTree(object):
 
     # def __iter__(self):
     #     return self.root.__iter__()
+    def bfs_traverse(self):
+        """
+        traverse the tree bread first search
+        """
+        if not self.root:
+            return
+
+        queue = [self.root]
+        while len(queue) > 0:
+            print(queue[0].key, queue[0].payload)
+            node = queue.pop(0)
+            if node.left_child is not None:
+                queue.append(node.left_child)
+            if node.right_child is not None:
+                queue.append(node.right_child)
 
     def put(self, key, value):
         if self.root:
@@ -124,8 +139,9 @@ class BinarySearchTree(object):
 
 if __name__ == "__main__":
     bst = BinarySearchTree()
-    bst[3] = 'red'
-    bst[4] = 'blue'
-    bst[6] = 'yellow'
-    bst[2] = 'at'
-    print(bst[6])
+    bst[1] = 'red'
+    bst[2] = 'blue'
+    bst[3] = 'yellow'
+    bst[4] = 'at'
+    bst[5] = 'you'
+    print(bst.bfs_traverse())
