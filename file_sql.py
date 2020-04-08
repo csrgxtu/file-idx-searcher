@@ -1,4 +1,4 @@
-# -*- coding: utf8 -*-
+#!/usr/bin/env python3
 import os
 import sys
 from moz_sql_parser import parse
